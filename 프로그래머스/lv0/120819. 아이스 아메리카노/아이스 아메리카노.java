@@ -1,9 +1,9 @@
 class Solution {
     public int[] solution(int money) {
-        int a = money/5500;
-        int b = money%5500;
-        int[] answer = {a,b};
+        int sum = money / 5500;
+        int num = money - (sum * 5500);
         
+        int[] answer = {sum, num};
         return answer;
     }
 }
