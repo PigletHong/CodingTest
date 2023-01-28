@@ -1,18 +1,13 @@
 import java.util.*;
 
-class Solution {
-    public int solution(long n) {        
-        List<Integer> list = new ArrayList<>();
-
-        while(n != 0) {
-            list.add((int)(n % 10));
-            n /= 10;
+public class Solution {
+    public int solution(int n) {
+        String num = String.valueOf(n);
+        int result = 0;
+        for(int i = 0; i < num.length(); i++) {
+            result += Integer.parseInt(num.substring(i, i+1));
         }
 
-        int answer = 0;
-        for (int i = 0; i < list.size(); i++) {
-            answer += list.get(i);
-        }
-        return answer;
+        return result;
     }
 }
