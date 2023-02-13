@@ -1,34 +1,21 @@
 class Solution {
     public int solution(int left, int right) {
-        int distance = right - left + 1;
-        int[] result = new int[distance];
-        int sum = 0;
-
-        for (int i = 0; i < result.length; i++) {
-            result[i] = left+i;
-        }
-
-        for (int i = 0; i < result.length; i++) {
-            if (yaksu(result[i])) {
-                sum += result[i];
+        int answer = 0;
+        
+        for(int i = left; i <= right; i++) {
+            int cnt = 0;
+            
+            for(int j = 1; j <= i; j++) {
+                if(i % j == 0) cnt++;
+            }
+            
+            if(cnt % 2 == 0) {
+                answer += i;
             } else {
-                sum -= result[i];
+                answer -= i;
             }
         }
-        return sum;
-    }
-    
-        public static boolean yaksu(int n) {
-        int cnt = 0;
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                cnt++;
-            }
-        }
-        if (cnt % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        
+        return answer;
     }
 }
