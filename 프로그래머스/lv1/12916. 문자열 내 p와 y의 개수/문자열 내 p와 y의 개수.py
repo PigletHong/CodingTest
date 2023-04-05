@@ -1,9 +1,10 @@
 def solution(s):
-    num1 = s.count("p");
-    num2 = s.count("P");
-    num3 = s.count("y");
-    num4 = s.count("Y");
-    if (num1 + num2) == (num3 + num4):
-        return True
-    else:
-        return False
+
+    s = s.lower()
+    substring1 = "p"
+    substring2 = "y"
+
+    x = s.count(substring1)
+    y = s.count(substring2)
+
+    return (x == y)
