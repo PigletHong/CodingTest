@@ -1,4 +1,7 @@
 def solution(seoul):
-    for i in range(0, len(seoul), 1):
-        if seoul[i] == "Kim":
-            return "김서방은 " + str(i) + "에 있다"
+    
+    for i in range(len(seoul)) :
+        if seoul[i] == "Kim" :
+            answer = i
+            
+    return('김서방은 ' + str(answer) + '에 있다')
