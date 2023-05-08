@@ -1,9 +1,8 @@
 def solution(absolutes, signs):
-    sum = 0
-    length = len(absolutes)
-    for i in range(0, length, 1):
+    answer = 0
+    for i in range(len(absolutes)):
         if signs[i]:
-            sum += absolutes[i]
+            answer += absolutes[i]
         else:
-            sum -= absolutes[i]
-    return sum
+            answer -= absolutes[i]
+    return answer
