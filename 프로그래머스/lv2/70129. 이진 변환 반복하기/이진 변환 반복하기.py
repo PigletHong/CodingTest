@@ -1,13 +1,11 @@
-def solution(x):
-    answer = []
-    cnt = 0
+def solution(s):
     zero = 0
-    while True:
-        if x == '1':
-            break
-        zero = zero + x.count("0")
-        x = x.replace("0", "")   
-        x = bin(len(x))[2:]
-        cnt = cnt + 1
-    answer = [cnt, zero]
-    return answer
+    conver = 0
+    while s != '1':
+        if '0' in s:
+            zero += s.count('0')
+            s = s.replace('0','')
+        length = len(s)
+        s = str(format(length,'b'))
+        conver += 1
+    return [conver,zero]
